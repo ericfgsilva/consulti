@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>ConsulTI - MED</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-3.2.0/css/bootstrap.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/animate.min.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/custom.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+</head>
+<body>
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-without-sidebar page-header-fixed">	
+		<!-- begin #header -->
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<!-- begin mobile sidebar expand / collapse button -->
+				<div class="navbar-header">
+					<a href="javascript:;" class="navbar-brand">ConsulTI - MED</a>
+				</div>
+				<!-- end mobile sidebar expand / collapse button -->
+				
+				<!-- begin header navigation right -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle" title="Notificações">
+							<i class="fa fa-2x fa-envelope"></i> 
+							<span class="label">3</span>
+						</a>
+						<ul class="dropdown-menu media-list">
+                            <li class="dropdown-header">Notificações (3)</li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Celso</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é...</p>
+                                        <div class="text-muted ">2 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Thiago</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é...</p>
+                                        <div class="text-muted">5 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Eric</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é essa tal de Chacrete</p>
+                                        <div class="text-muted">25 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="javascript:;">Outras Notificações</a>
+                            </li>
+						</ul>
+					</li>
+					<li class="divider hidden-xs"></li>
+					<li><a href="javascript:;" title="Relatório"><i class="fa fa-2x fa-line-chart"></i></a></li>
+					<li class="divider hidden-xs"></li>
+					<li><a id="showLeft" href="javascript:;" title="Navegação Lateral"><i class="fa fa-2x fa-th"></i></a></li>
+					<li class="divider hidden-xs"></li>
+					<li><a href="javascript:;" title="Sair"><i class="fa fa-2x fa-sign-out"></i></a></li>
+
+				</ul>
+				<!-- end header navigation right -->
+				
+			</div>
+			<!-- end container-fluid -->
+		</div>
+		<!-- end #header -->
+
+		<!-- Navegação Principal Lateral -->
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="menu-principal-left">
+				<h3>Menu</h3>
+				<li><a href="consultas.html"><i class="fa fa-archive"></i> Consulta</a></li>
+				<li><a href="javascript:;"  class="active"><i class="fa fa-male"></i> Paciente</a></li>
+				<li><a href="cadastro-plano-de-saude.html"><i class="fa fa-list"></i> Plano de Saúde</a></li>
+			</nav>
+		<!-- End Navegação Principal Lateral -->
+
+		<!-- begin #content -->
+		<div id="content" class="content">
+
+			<div class="row">
+				
+				<div id="cadastro-paciente" class="col-xs-12 col-sm-12 col-md-12">
+					<div class="panel panel-inverse">
+                        <!-- <div class="panel-heading">
+                            <h4 class="panel-title">Cadastro Paciente&nbsp;</h4>
+                        </div> -->
+                        <div class="panel-body">
+							<form class="form-horizontal">
+
+							<div class="row">
+							
+							<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="table-responsive">
+							<h4 class="media-heading">Pacientes Cadastrados</h4>
+							
+							<div class="col-md-3">&nbsp;</div>
+							<div class="col-md-6">
+							  <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar Paciente">
+                                <div class="input-group-btn">	
+                                    <a href="#" id="botao-buscar-paciente" class="btn btn-default"><i class="fa fa-search"></i></a>
+                                    <a href="#" id="botao-cadastrar-paciente" class="btn btn-default">Novo Paciente</a>
+                                </div>
+                            </div>
+						    </div>
+						    <div class="col-md-3">&nbsp;</div>		
+
+                            <table class="pacientes_table table table-striped table-hover">
+							    <thead>
+							        <tr>
+							            <th width="3%"></th>
+							            <th>Nome</th>
+							            <th>Telefone</th>
+							            <th>Plano</th>
+							            <th>Data Nascimento</th>
+							            <th class="text-center">Operações</th>
+							            <th width="3%">&nbsp;</th>
+							        </tr>
+							    </thead>
+							    <tbody class="f-s-10">
+							        <tr>
+							            <td><input type="radio" name="paciente-selecionado" value=""></td>
+							            <td>Carol Machado</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Unimed Saúde</td>
+							            <td>07/03/2015</td>
+							            <td class="text-center">
+							            	<a href="javascript:;"><i class="fa fa-2x fa-user-md"></i></a>
+							            &nbsp;
+							            	<a href="javascript:;"><i class="fa fa-2x fa-medkit"></i></a>
+							            </td>
+							            <td class="text-center">
+							            	<a href="#modal-excluir-paciente" title="Excluir Paciente" class="botao-excluir-paciente disabled" data-toggle="modal">
+							            		<i class="fa fa-2x fa-trash-o"></i>
+							            	</a>
+							            </td>
+							        </tr>
+							        <tr>
+							            <td><input type="radio" name="paciente-selecionado" value=""></td>
+							            <td>Angelica Correia</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Bradesco Saúde</td>
+							            <td>07/03/2015</td>
+							            <td class="text-center">
+							            	<a href="javascript:;"><i class="fa fa-2x fa-user-md"></i></a>
+							            &nbsp;
+							            	<a href="javascript:;"><i class="fa fa-2x fa-medkit"></i></a>
+							            </td>
+							            <td class="text-center">
+							            	<a href="#modal-excluir-paciente" title="Excluir Paciente" class="botao-excluir-paciente disabled" data-toggle="modal">
+							            		<i class="fa fa-2x fa-trash-o"></i>
+							            	</a>
+							            </td>
+							        </tr>
+							        <tr>
+							            <td><input type="radio" name="paciente-selecionado" value=""></td>
+							            <td>Julia Andrade</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Sulamerica Saúde</td>
+							            <td>07/03/2015</td>
+							            <td class="text-center">
+							            	<a href="javascript:;"><i class="fa fa-2x fa-user-md"></i></a>
+							            &nbsp;
+							            	<a href="javascript:;"><i class="fa fa-2x fa-medkit"></i></a>
+							            </td>
+							            <td class="text-center">
+							            	<a href="#modal-excluir-paciente" title="Excluir Paciente" class="botao-excluir-paciente disabled" data-toggle="modal">
+							            		<i class="fa fa-2x fa-trash-o"></i>
+							            	</a>
+							            </td>
+							        </tr>
+							        <tr>
+							            <td><input type="radio" name="paciente-selecionado" value=""></td>
+							            <td>Clara Botelho</td>
+							            <td>(00) 0000 0000</td>
+							            <td>CAIXA Saúde</td>
+							            <td>07/03/2015</td>
+							            <td class="text-center">
+							            	<a href="javascript:;"><i class="fa fa-2x fa-user-md"></i></a>
+							            &nbsp;
+							            	<a href="javascript:;"><i class="fa fa-2x fa-medkit"></i></a>
+							            </td>
+							            <td class="text-center">
+							            	<a href="#modal-excluir-paciente" title="Excluir Paciente" class="botao-excluir-paciente disabled" data-toggle="modal">
+							            		<i class="fa fa-2x fa-trash-o"></i>
+							            	</a>
+							            </td>
+							        </tr>
+							    </tbody>
+							</table>
+							
+							</div><!-- end Table-responsive -->
+							</div>
+
+							</div><!-- end row -->
+
+							</form>
+							<!-- End form cadastro paciente -->
+                        </div>
+                    </div>
+				</div>
+				<!-- End Cadastro Paciente -->
+				
+				
+				
+				<!-- Modal-editar-Paciente -->
+				<div class="modal" id="modal-editar-paciente">
+					<div class="modal-dialog">
+					
+					<div class="modal-content">
+							<div class="modal-header m-b-0">
+								<h4 class="modal-title">Editar Paciente</h4>
+							</div>
+					<div class="modal-body">
+						<form>
+							      
+					    	<div class="invoice-company">
+				                <ul class="nav nav-pills">
+				                   
+				                    <li class="active">
+					                    <a href="#paciente" class="btn btn-default" title="Dados Paciente" data-toggle="tab" style="width:80px">
+					                    	<i class="fa fa-2x fa-user"></i><span class="hidden-xs hidden-sm hidden-md"><br>Paciente</span>
+					                    </a>
+				                    </li>
+
+				                    <li>
+					                    <a href="#plano" class="btn btn-default" title="Planos de Saúde" data-toggle="tab" style="width:80px">
+					                    	<i class="fa fa-2x fa-medkit"></i><span class="hidden-xs hidden-sm hidden-md"><br>Plano</span>
+					                    </a>
+				                    </li>
+				                </ul>    
+			                </div>
+
+							<div class="tab-content p-0">
+
+								<div class="tab-pane fade active in" id="paciente">
+								
+									<div class="row">
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+									    <label for="nome">Nome:</label>
+									    <input type="text" class="form-control" id="nome" placeholder="Nome">
+									  </div>
+
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+									    <label for="num-ans">Data de Nascimento:</label>
+									    <input type="number" class="form-control" id="num-ans" placeholder="Número do Registro ANS">
+									  </div>
+									</div>
+
+									<div class="row">
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+									    <label for="cpf">CPF:</label>
+									    <input type="number" class="form-control" id="cpf" placeholder="999.999.999-99">
+									  </div>
+
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+									    <label for="rg">RG:</label>
+									    <input type="number" class="form-control" id="rg" placeholder="9.999.999">
+									  </div>
+									</div> 
+
+									<div class="row">
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+									    <label for="tel-cont">Telefone:</label>
+									    <input type="tel" class="form-control" id="tel-cont" placeholder="(00) 0000-0000">
+									  </div>
+
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+									    <label for="email-paciente">E-mail:</label>
+									    <input type="text" class="form-control" id="email-paciente" placeholder="email@email.com">
+									  </div>
+									</div>
+
+									<div class="row">
+									  <div class="form-group col-xs-12 col-sm-12 col-md-12">
+									      <label for="endereco-paciente">Endereço:</label>
+									      <input type="tex" class="form-control" id="endereco-paciente" placeholder="Av,Rua...">
+									  </div>
+									</div>	
+
+									<div class="row">
+									  <div class="form-group col-xs-12 col-sm-12 col-md-12">
+									     <textarea class="form-control" id="descricao-paciente" rows="4" Placeholder="Escreva uma Descrição."></textarea>
+									  </div>
+									</div>
+								
+								</div><!-- end paciente -->
+
+								<div class="tab-pane fade" id="plano">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="input-group-btn">	
+					                                    <a href="#" id="botao-planos-associados" class="btn btn-default">Associados</a>
+					                                    <a href="#" id="botao-planos-disponiveis" class="btn btn-default">Disponíveis</a>
+					                                </div>
+			                                	</div>		
+			                                </div>
+			                                <div class="row">
+			                                	<div class="col-md-12">
+			                                		<div class="input-group m-b-10">
+						                                <input type="text" class="form-control" placeholder="Buscar Plano">
+						                                <div class="input-group-btn">	
+						                                    <a href="#" id="botao-buscar-plano" class="btn btn-default"><i class="fa fa-search"></i></a>
+						                                </div>
+						                            </div>
+													<table class="table table-striped m-b-0">
+														<thead>
+													        <tr>
+													            <th>Planos</th>
+													        </tr>
+													    </thead>
+													</table>	
+													<div class="height-150" data-scrollbar="true">	
+													<table class="planos_table table table-striped table-hover">
+													        <tbody>
+														        <tr>
+														            <td>Plano 1</td>
+														        </tr>
+														        <tr>
+														            <td>Plano 2</td>
+														        </tr>
+														        <tr>
+														            <td>Plano 3</td>
+														        </tr>
+														        <tr>
+														            <td>Plano 4</td>
+														        </tr>
+														        <tr>
+														            <td>Plano 5</td>
+														        </tr>
+														        <tr>
+														            <td>Plano 6</td>
+														        </tr>
+														        <tr>
+														            <td>Plano 7</td>
+														        </tr>
+														    </tbody>
+														
+													 </table>       
+													 </div>    
+			                                	</div>	
+			                                </div>
+
+										</div>
+										<!-- Lista de planos (Associados e Disponiveis) -->
+
+
+										<div class="col-md-6">
+											<div id="form-planos">
+											<div class="row">
+											  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+											    <label for="data-nasc">Data de Nascimento:</label>
+											    <input type="text" class="form-control" id="data-nasc" placeholder="dd/mm/aaaa">
+											  </div>
+
+											  <div class="form-group col-xs-12 col-sm-4 col-md-4">
+											    <label for="vis">Via:</label>
+											    <input type="text" class="form-control" id="via" placeholder="">
+											  </div>
+											</div> 
+
+											<div class="row">
+											  <div class="form-group col-xs-12 col-sm-12 col-md-12">
+											    <label for="num-carteira">Número da Carteira:</label>
+											    <input type="text" class="form-control" id="num-carteira" placeholder="">
+											  </div>
+											</div> 
+
+											<div class="row">
+											  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+											    <label for="val-inicial">Validade Inicial:</label>
+											    <input type="text" class="form-control" id="val-inicial" placeholder="dd/mm/aaa">
+											  </div>
+
+											  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+											    <label for="val-final">Validade Final:</label>
+											    <input type="text" class="form-control" id="val-final" placeholder="dd/mm/aaa">
+											  </div>
+											</div>
+
+											<div class="row">
+											  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+											    <label for="tipo">Tipo</label>
+											    <select name="tipo" id="" class="form-control">
+											    	<option value="none">Selecione</option>
+											    	<option value="tipo 1">Tipo 1</option>
+											    	<option value="tipo 2">Tipo 2</option>
+											    	<option value="tipo 3">Tipo 3</option>
+											    </select>
+											  </div>
+
+											  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+											    <label for="acomodacao">Acomodação:</label>
+											    <select name="acomodacao" id="" class="form-control">
+											    	<option value="nome">Selecione</option>
+											    	<option value="acomodacao 1">Acomodação 1</option>
+											    	<option value="acomodacao 2">Acomodação 2</option>
+											    	<option value="acomodacao 3">Acomodação 3</option>
+											    </select>
+											  </div>
+											</div>
+										</div>
+										<!-- End Form Planos -->
+										</div>	
+									</div>
+								</div><!-- end plano -->
+
+							</div><!-- end tab-content -->
+
+				       <div class="modal-footer">
+							<a href="#modal-cancelar-editar-paciente" title="Cancelar Edição do Paciente" class="btn btn-md btn-default botao-cancelar-editar-paciente" data-toggle="modal">Cancelar</a>
+	            			<a href="#modal-salvar-editar-paciente" title="Salvar Edição Paciente" class="btn btn-md btn-default botao-salvar-editar-paciente" data-toggle="modal">Salvar</a>
+						</div>
+						<!-- end modal footer -->
+						
+						</form>
+					</div>
+					<!-- end modal body -->
+							
+					</div>
+					<!-- end modal-content -->
+					</div>
+					<!-- end modal-dialog -->
+				</div>
+				<!-- End modal-editar-Paciente -->
+
+				<!-- Modal-Salvar-Edição-Paciente -->
+				<div class="modal" id="modal-salvar-editar-paciente">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-success m-b-0">
+								<h4 class="modal-title">Salvar Cadastro</h4>
+							</div>
+							<div class="modal-body">
+								Edição realizada com sucesso.
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-md btn-default" data-dismiss="modal">OK</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Modal-Salvar-Edição-Paciente -->
+
+				<!-- Modal-cancelar-Edição-Paciente -->
+				<div class="modal" id="modal-cancelar-editar-paciente">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-warning m-b-0">
+								<h4 class="modal-title"><i class="fa fa-warning"></i> Editar Paciente</h4>
+							</div>
+							<div class="modal-body">
+								Tem certeza que deseja cancelar a edição do paciente?
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-md btn-default botao-cancelar-editar-paciente" data-dismiss="modal">Sim</a>
+								<a href="#modal-novo-edit-plano" class="btn btn-md btn-default botao-nao-cancelar-editar-paciente" data-toggle="modal" data-target="#modal-novo-edit-plano">Não</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Modal-cancelar-Edição-Paciente -->
+				
+
+				<!-- Modal-Excluir-Paciente -->
+				<div class="modal" id="modal-excluir-paciente">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-warning m-b-0">
+								<h4 class="modal-title"><i class="fa fa-warning"></i>Excluir Paciente</h4>
+							</div>
+							<div class="modal-body">
+								Tem certeza que deseja excluir este paciente?
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-md btn-default" data-dismiss="modal">Sim</a>
+								<a href="javascript:;" class="btn btn-md btn-default" data-dismiss="modal">Não</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Modal-Excluir-Paciente -->
+
+
+
+        	</div>
+        	<!-- End Row -->
+        </div>
+		<!-- end #content -->
+		
+		
+
+        
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+	<script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="assets/crossbrowserjs/respond.min.js"></script>
+		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/sparkline/jquery.sparkline.js"></script>
+	<script src="assets/plugins/jquery-knob/js/jquery.knob.js"></script>
+	<script src="assets/js/apps.min.js"></script>
+
+	<script src="assets/js/classie.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+	
+	<!-- ================== MENU LATERAL ================== -->
+	<script>
+	var menuLeft = document.getElementById( 'menu-principal-left' ),
+	body = document.body;
+	 
+	showLeft.onclick = function() {
+	classie.toggle( this, 'active' );
+	classie.toggle( menuLeft, 'cbp-spmenu-open' );
+	disableOther( 'showLeft' );
+	};
+	 
+	function disableOther( button ) {
+	if( button !== 'showLeft' ) {
+	classie.toggle( showLeft, 'disabled' );
+	}
+	}
+
+	</script>
+	<!-- ================== END MENU LATERAL ================== -->
+
+	<!-- ================== MODAL CHECKBOX ================== -->
+	<script>
+
+	var titleModal = $('.btn').attr('title');
+	$('.modal h4.modal-title').text(titleModal);	
+
+	$('.modal-cancelar-editar-paciente, .botao-nao-cancelar-editar-paciente').click(function() { 
+    	$('#modal-cancelar-editar-paciente').modal('hide');
+  	});
+
+  	$('.botao-cancelar-editar-paciente, .botao-salvar-editar-paciente').click(function() { 
+    	$('#modal-editar-paciente').modal('hide');
+  	}); 
+
+  	$('.botao-nao-cancelar-editar-paciente').click(function() { 
+    	$('#modal-editar-paciente').modal('show');
+  	}); 
+
+
+	$(document).ready(function () {
+	    $('.pacientes_table tr').click(function (event) {
+	        if (event.target.type !== 'radio') {
+	            $(':radio', this).trigger('click');
+	            $('#modal-editar-paciente').modal('show');
+	        }
+	    });
+
+	    $("input[type='radio']").change(function (e) {
+	        if ($(this).is(":checked")) {
+	           $('.botao-excluir-paciente').removeClass('disabled');
+	        } else {
+	           $('.botao-excluir-paciente').addClass('disabled');
+	        }
+	    });
+	});	
+
+
+	$("#form-planos").hide();
+
+	$(document).ready(function () {
+	    $('.planos_table tr').click(function (event) {
+		    $("#form-planos").show();
+		    //$('tr').addClass('active');    
+	    });
+	});
+
+
+	</script>
+	<!-- ================== END MODAL CHECKBOX ================== -->
+
+	
+</body>
+</html>

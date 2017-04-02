@@ -1,0 +1,1 @@
+var handleCountdownTimer=function(){var newYear=new Date;newYear=new Date(newYear.getFullYear()+1,0,1),$("#timer").countdown({until:newYear})},ComingSoon=function(){"use strict";return{init:function(){handleCountdownTimer()}}}();

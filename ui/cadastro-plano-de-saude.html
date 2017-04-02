@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>ConsulTI - MED</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-3.2.0/css/bootstrap.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/animate.min.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/custom.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+</head>
+<body>
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-without-sidebar page-header-fixed">	
+		<!-- begin #header -->
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<!-- begin mobile sidebar expand / collapse button -->
+				<div class="navbar-header">
+					<a href="javascript:;" class="navbar-brand">ConsulTI - MED</a>
+				</div>
+				<!-- end mobile sidebar expand / collapse button -->
+				
+				<!-- begin header navigation right -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle" title="Notificações">
+							<i class="fa fa-2x fa-envelope"></i> 
+							<span class="label">3</span>
+						</a>
+						<ul class="dropdown-menu media-list">
+                            <li class="dropdown-header">Notificações (3)</li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Celso</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é...</p>
+                                        <div class="text-muted ">2 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Thiago</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é...</p>
+                                        <div class="text-muted">5 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Eric</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é essa tal de Chacrete</p>
+                                        <div class="text-muted">25 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="javascript:;">Outras Notificações</a>
+                            </li>
+						</ul>
+					</li>
+					<li class="divider hidden-xs"></li>
+					<li><a href="javascript:;" title="Relatório"><i class="fa fa-2x fa-line-chart"></i></a></li>
+					<li class="divider hidden-xs"></li>
+					<li><a id="showLeft" href="javascript:;" title="Navegação Lateral"><i class="fa fa-2x fa-th"></i></a></li>
+					<li class="divider hidden-xs"></li>
+					<li><a href="javascript:;" title="Sair"><i class="fa fa-2x fa-sign-out"></i></a></li>
+
+				</ul>
+				<!-- end header navigation right -->
+				
+			</div>
+			<!-- end container-fluid -->
+		</div>
+		<!-- end #header -->
+
+		<!-- Navegação Principal Lateral -->
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="menu-principal-left">
+				<h3>Menu</h3>
+				<li><a href="consultas.html"><i class="fa fa-archive"></i> Consulta</a></li>
+				<li><a href="paciente.html"><i class="fa fa-male"></i> Paciente</a></li>
+				<li><a href="javascript:;"  class="active"><i class="fa fa-list"></i> Plano de Saúde</a></li>
+			</nav>
+		<!-- End Navegação Principal Lateral -->
+
+		<!-- begin #content -->
+		<div id="content" class="content">
+
+			<h1 class="page-header">Planos de Saúde <small>Cadastrar / Editar e Excluir</small></h1>
+
+			<div class="row">
+				
+				<div id="cadastro-plano" class="col-xs-12 col-sm-12 col-md-12">
+					<div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Cadastro Plano de Saúde</h4>
+                        </div>
+                        <div class="panel-body">
+							<form class="form-horizontal">
+
+							<div class="row">
+							
+							<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="table-responsive">
+							<h4 class="media-heading">Planos de Saúde Cadastrados</h4>
+
+							<div class="form-group">
+						        <div class="col-md-12 text-right">
+						            <a id="bt-novo-edit" title="Cadastrar Novo Plano de Saúde" class="btn btn-default" data-toggle="modal" data-target="#modal-novo-edit-plano">Novo Plano</a>
+						            <a id="bt-novo-edit" title="Editar Plano de Saúde" class="btn btn-editar btn-default disabled" data-toggle="modal" data-target="#modal-novo-edit-plano">Editar</a>
+						            <a href="#modal-excluir-plano" class="btn btn-excluir btn-default disabled" data-toggle="modal">Excluir</a>
+						        </div>
+						    </div>
+
+                            <table class="planos_table table table-bordered table-striped table-hover">
+							    <thead>
+							        <tr>
+							            <th width="3%"></th>
+							            <th>Nome</th>
+							            <th>Nº Registro ANS</th>
+							            <th>Contato</th>
+							            <th>Descrição</th>
+							        </tr>
+							    </thead>
+							    <tbody class="f-s-10">
+							        <tr>
+							            <td><input type="checkbox" value=""></td>
+							            <td>Unimed Saúde</td>
+							            <td>000.000.000.000</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Lorem ipsum dolor sit amet...</td>
+							        </tr>
+							        <tr>
+							            <td><input type="checkbox" value=""></td>
+							            <td>Tempo Saúde</td>
+							            <td>000.000.000.000</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Lorem ipsum dolor sit amet...</td>
+							        </tr>
+							        <tr>
+							            <td><input type="checkbox" value=""></td>
+							            <td>CAIXA Saúde</td>
+							            <td>000.000.000.000</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Lorem ipsum dolor sit amet...</td>
+							        </tr>
+							        <tr>
+							            <td><input type="checkbox" value=""></td>
+							            <td>Bradesco Saúde</td>
+							            <td>000.000.000.000</td>
+							            <td>(00) 0000 0000</td>
+							            <td>Lorem ipsum dolor sit amet...</td>
+							        </tr>
+							    </tbody>
+							</table>
+							
+							</div><!-- end Table-responsive -->
+							</div>
+
+							</div><!-- end row -->
+
+							</form>
+							<!-- End form cadastro plano -->
+                        </div>
+                    </div>
+				</div>
+				<!-- End Cadastro Plano -->
+				
+				
+
+				<!-- Modal-novo-edit-Plano -->
+				<div class="modal" id="modal-novo-edit-plano">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header m-b-0">
+								<h4 class="modal-title"></h4>
+							</div>
+							<div class="modal-body">
+								<form>
+							      <div id="cad-plan" class="modal-body">
+							      
+							      <div class="row">
+							          <div class="form-group col-xs-12 col-sm-6 col-md-6">
+							            <label for="nome">*Nome:</label>
+							            <input type="text" class="form-control" id="nome" placeholder="Nome">
+							          </div>
+								  
+							          <div class="form-group col-xs-12 col-sm-6 col-md-6">
+							            <label for="num-ans">*Nº Registro ANS:</label>
+							            <input type="number" class="form-control" id="num-ans" placeholder="Número do Registro ANS">
+							          </div>
+						          </div> 
+							      
+							      <div class="row">
+									  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+							            <label for="tel-cont">*Contato:</label>
+							            <input type="tel" class="form-control" id="tel-cont" placeholder="(00) 0000-0000">
+							          </div>
+						          </div>  
+							      
+							      <div class="row">
+								      <div class="form-group col-xs-12 col-sm-12 col-md-12">
+								         <textarea class="form-control" id="descricao-plano" rows="4" Placeholder="Escreva uma Descrição."></textarea>
+								      </div>
+							      </div>  
+			   			          
+							      </div>
+
+							       <div class="modal-footer">
+										<a href="#modal-cancelar-plano" class="btn btn-md btn-default modal-cancelar-plano" data-toggle="modal">Cancelar</a>
+				            			<a href="#modal-salvar-plano" class="btn btn-md btn-default modal-salvar-plano" data-toggle="modal">Salvar</a>
+									</div>
+							      </form>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- End modal-novo-edit-Plano -->
+
+				<!-- Modal-Salvar-Plano -->
+				<div class="modal" id="modal-salvar-plano">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-success m-b-0">
+								<h4 class="modal-title">Salvar Plano de Saúde</h4>
+							</div>
+							<div class="modal-body">
+								Plano de Saúde salvo com sucesso.
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-md btn-default" data-dismiss="modal">OK</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End modal-Salvar-Plano -->
+				
+
+				<!-- Modal-Excluir-Plano -->
+				<div class="modal" id="modal-excluir-plano">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-warning m-b-0">
+								<h4 class="modal-title"><i class="fa fa-warning"></i> Excluir Plano de Saúde</h4>
+							</div>
+							<div class="modal-body">
+								Tem certeza que deseja excluir este plano?
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-md btn-default" data-dismiss="modal">Sim</a>
+								<a href="javascript:;" class="btn btn-md btn-default" data-dismiss="modal">Não</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Modal-Excluir-Plano -->
+
+				<!-- Modal-cancelar-Plano -->
+				<div class="modal" id="modal-cancelar-plano">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-warning m-b-0">
+								<h4 class="modal-title"><i class="fa fa-warning"></i> Cancelar Cadastro Plano de Saúde</h4>
+							</div>
+							<div class="modal-body">
+								Tem certeza que deseja cancelar o cadastro do plano?
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-md btn-default modal-cancelar-plano" data-dismiss="modal">Sim</a>
+								<a href="#modal-novo-edit-plano" class="btn btn-md btn-default modal-nao-cancelar-plano" data-toggle="modal" data-target="#modal-novo-edit-plano">Não</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Modal-cancelar-Plano -->
+
+
+
+        	</div>
+        	<!-- End Row -->
+        </div>
+		<!-- end #content -->
+		
+		
+
+        
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+	<script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="assets/crossbrowserjs/respond.min.js"></script>
+		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/sparkline/jquery.sparkline.js"></script>
+	<script src="assets/plugins/jquery-knob/js/jquery.knob.js"></script>
+	<script src="assets/js/apps.min.js"></script>
+
+	<script src="assets/js/classie.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+	
+	<!-- ================== MENU LATERAL ================== -->
+	<script>
+	var menuLeft = document.getElementById( 'menu-principal-left' ),
+	body = document.body;
+	 
+	showLeft.onclick = function() {
+	classie.toggle( this, 'active' );
+	classie.toggle( menuLeft, 'cbp-spmenu-open' );
+	disableOther( 'showLeft' );
+	};
+	 
+	function disableOther( button ) {
+	if( button !== 'showLeft' ) {
+	classie.toggle( showLeft, 'disabled' );
+	}
+	}
+
+	</script>
+	<!-- ================== END MENU LATERAL ================== -->
+
+	<!-- ================== MODAL CHECKBOX ================== -->
+	<script>
+
+	var titleModal = $('#bt-novo-edit').attr('title');
+	$('#modal-novo-edit-plano h4.modal-title').text(titleModal);	
+
+	$('.modal-cancelar-plano').click(function() { 
+    	$('#modal-novo-edit-plano').modal('hide');
+  	});
+
+  	$('.modal-nao-cancelar-plano').click(function() { 
+    	$('#modal-cancelar-plano').modal('hide');
+  	}); 
+
+  	$('.modal-salvar-plano').click(function() { 
+    	$('#modal-novo-edit-plano').modal('hide');
+  	}); 
+
+
+	$(document).ready(function () {
+	    $('.planos_table tr').click(function (event) {
+	        if (event.target.type !== 'checkbox') {
+	            $(':checkbox', this).trigger('click');
+	        }
+	    });
+
+	    $("input[type='checkbox']").change(function (e) {
+	        if ($(this).is(":checked")) {
+	           $('.btn-editar, .btn-excluir').removeClass('disabled');
+	        } else {
+	           $('.btn-editar, .btn-excluir').addClass('disabled');
+	        }
+	    });
+	});	
+	</script>
+	<!-- ================== END MODAL CHECKBOX ================== -->
+	
+</body>
+</html>

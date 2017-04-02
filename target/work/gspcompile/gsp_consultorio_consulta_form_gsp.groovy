@@ -1,0 +1,117 @@
+import br.com.consultorio.Consulta
+import org.codehaus.groovy.grails.plugins.metadata.GrailsPlugin
+import org.codehaus.groovy.grails.web.pages.GroovyPage
+import org.codehaus.groovy.grails.web.taglib.*
+import org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException
+import org.springframework.web.util.*
+import grails.util.GrailsUtil
+
+class gsp_consultorio_consulta_form_gsp extends GroovyPage {
+public String getGroovyPageFileName() { "/WEB-INF/grails-app/views/consulta/_form.gsp" }
+public Object run() {
+Writer out = getOut()
+Writer expressionOut = getExpressionOut()
+registerSitemeshPreprocessMode()
+printHtmlPart(0)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'dia', 'error'))
+printHtmlPart(1)
+invokeTag('message','g',4,['code':("consulta.dia.label"),'default':("Dia")],-1)
+printHtmlPart(2)
+invokeTag('datePicker','g',7,['name':("dia"),'precision':("day"),'required value':(consultaInstance?.dia)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'ordemChegada', 'error'))
+printHtmlPart(4)
+invokeTag('message','g',13,['code':("consulta.ordemChegada.label"),'default':("Ordem Chegada")],-1)
+printHtmlPart(5)
+invokeTag('field','g',16,['name':("ordemChegada"),'type':("number"),'value':(consultaInstance.ordemChegada)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'horaChegada', 'error'))
+printHtmlPart(6)
+invokeTag('message','g',22,['code':("consulta.horaChegada.label"),'default':("Hora Chegada")],-1)
+printHtmlPart(5)
+invokeTag('textField','g',25,['name':("horaChegada"),'value':(consultaInstance?.horaChegada)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'horaSaida', 'error'))
+printHtmlPart(7)
+invokeTag('message','g',31,['code':("consulta.horaSaida.label"),'default':("Hora Saida")],-1)
+printHtmlPart(5)
+invokeTag('textField','g',34,['name':("horaSaida"),'value':(consultaInstance?.horaSaida)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'paciente', 'error'))
+printHtmlPart(8)
+invokeTag('message','g',40,['code':("consulta.paciente.label"),'default':("Paciente")],-1)
+printHtmlPart(2)
+invokeTag('select','g',43,['id':("paciente"),'name':("paciente.id"),'from':(br.com.consultorio.Paciente.list()),'optionKey':("id"),'required':(""),'value':(consultaInstance?.paciente?.id),'class':("many-to-one")],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'tipoConsulta', 'error'))
+printHtmlPart(9)
+invokeTag('message','g',49,['code':("consulta.tipoConsulta.label"),'default':("Tipo Consulta")],-1)
+printHtmlPart(2)
+invokeTag('select','g',52,['id':("tipoConsulta"),'name':("tipoConsulta.id"),'from':(br.com.consultorio.TipoConsulta.list()),'optionKey':("id"),'required':(""),'value':(consultaInstance?.tipoConsulta?.id),'class':("many-to-one")],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'situacaoConsulta', 'error'))
+printHtmlPart(10)
+invokeTag('message','g',58,['code':("consulta.situacaoConsulta.label"),'default':("Situacao Consulta")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',61,['name':("situacaoConsulta"),'required':(""),'value':(consultaInstance?.situacaoConsulta)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'preferencial', 'error'))
+printHtmlPart(11)
+invokeTag('message','g',67,['code':("consulta.preferencial.label"),'default':("Preferencial")],-1)
+printHtmlPart(5)
+invokeTag('checkBox','g',70,['name':("preferencial"),'value':(consultaInstance?.preferencial)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'numeroCarteira', 'error'))
+printHtmlPart(12)
+invokeTag('message','g',76,['code':("consulta.numeroCarteira.label"),'default':("Numero Carteira")],-1)
+printHtmlPart(5)
+invokeTag('textField','g',79,['name':("numeroCarteira"),'value':(consultaInstance?.numeroCarteira)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'planoSaude', 'error'))
+printHtmlPart(13)
+invokeTag('message','g',85,['code':("consulta.planoSaude.label"),'default':("Plano Saude")],-1)
+printHtmlPart(5)
+invokeTag('select','g',88,['id':("planoSaude"),'name':("planoSaude.id"),'from':(br.com.consultorio.PlanoSaude.list()),'optionKey':("id"),'value':(consultaInstance?.planoSaude?.id),'class':("many-to-one"),'noSelection':(['null': ''])],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'valor', 'error'))
+printHtmlPart(14)
+invokeTag('message','g',94,['code':("consulta.valor.label"),'default':("Valor")],-1)
+printHtmlPart(5)
+invokeTag('field','g',97,['name':("valor"),'value':(fieldValue(bean: consultaInstance, field: 'valor'))],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'valorGlosa', 'error'))
+printHtmlPart(15)
+invokeTag('message','g',103,['code':("consulta.valorGlosa.label"),'default':("Valor Glosa")],-1)
+printHtmlPart(5)
+invokeTag('field','g',106,['name':("valorGlosa"),'value':(fieldValue(bean: consultaInstance, field: 'valorGlosa'))],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'descricao', 'error'))
+printHtmlPart(16)
+invokeTag('message','g',112,['code':("consulta.descricao.label"),'default':("Descricao")],-1)
+printHtmlPart(5)
+invokeTag('textField','g',115,['name':("descricao"),'value':(consultaInstance?.descricao)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'medico', 'error'))
+printHtmlPart(17)
+invokeTag('message','g',121,['code':("consulta.medico.label"),'default':("Medico")],-1)
+printHtmlPart(5)
+invokeTag('textField','g',124,['name':("medico"),'value':(consultaInstance?.medico)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: consultaInstance, field: 'usuario', 'error'))
+printHtmlPart(18)
+invokeTag('message','g',130,['code':("consulta.usuario.label"),'default':("Usuario")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',133,['name':("usuario"),'required':(""),'value':(consultaInstance?.usuario)],-1)
+printHtmlPart(19)
+}
+public static final Map JSP_TAGS = new HashMap()
+protected void init() {
+	this.jspTags = JSP_TAGS
+}
+public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
+public static final long LAST_MODIFIED = 1419554567000L
+public static final String EXPRESSION_CODEC = 'html'
+public static final String STATIC_CODEC = 'none'
+public static final String OUT_CODEC = 'html'
+public static final String TAGLIB_CODEC = 'none'
+}

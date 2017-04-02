@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>ConsulTI - MED</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-3.2.0/css/bootstrap.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/animate.min.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/custom.css" rel="stylesheet" />
+	<link href="assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+</head>
+<body>
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-without-sidebar page-header-fixed">
+		<!-- begin #header -->
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<!-- begin mobile sidebar expand / collapse button -->
+				<div class="navbar-header">
+					<a href="javascript:;" class="navbar-brand">ConsulTI - MED</a>
+				</div>
+				<!-- end mobile sidebar expand / collapse button -->
+				
+				<!-- begin header navigation right -->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="javascript:;" title="Consultas"><i class="fa fa-2x fa-archive"></i></a></li>
+					<li class="divider hidden-xs"></li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle" title="Notificações">
+							<i class="fa fa-2x fa-envelope"></i> 
+							<span class="label">3</span>
+						</a>
+						<ul class="dropdown-menu media-list">
+                            <li class="dropdown-header">Notificações (3)</li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Celso</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é...</p>
+                                        <div class="text-muted ">2 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Thiago</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é...</p>
+                                        <div class="text-muted">5 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="pull-left media-object bg-red hidden-xs"><i class="fa fa-envelope"></i></div>
+                                    <div class="media-body">
+                                        <h6 class="media-heading">Dr Eric</h6>
+                                        <p class="hidden-xs">Pense numa secretaria gostosa é essa tal de Chacrete</p>
+                                        <div class="text-muted">25 minutos atrás</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="javascript:;">Outras Notificações</a>
+                            </li>
+						</ul>
+					</li>
+					<li class="divider hidden-xs"></li>
+					<li><a href="javascript:;" title="Relatório"><i class="fa fa-2x fa-line-chart"></i></a></li>
+					<li class="divider hidden-xs"></li>
+					<li><a href="javascript:;" title="Sair"><i class="fa fa-2x fa-sign-out"></i></a></li>
+				</ul>
+				<!-- end header navigation right -->
+				
+			</div>
+			<!-- end container-fluid -->
+		</div>
+		<!-- end #header -->
+		
+		<!-- begin #content -->
+		<div id="content" class="content">
+			
+			<!-- begin row -->
+			<div class="row">
+
+				
+				<div class="col-md-1 col-sm-6 hidden-xs hidden-sm visible-lg visible-md ui-sortable">
+					<div class="widget-consulti widget-stats bg-consulti">
+						<div class="stats-info text-center">
+							 <div class="title bg-consulti-darker">Atendidos</div>
+							<p>39</p>
+						</div>	
+					</div><!--end Atendidos-->
+					
+					<div class="widget-consulti widget-stats bg-consulti">
+						<div class="stats-info text-center">
+							<div class="title bg-consulti-darker">Atender</div>
+							<p>71</p>
+						</div>	
+					</div><!--end Atender-->	
+				</div><!--status do dia-->
+
+				<!-- Visão mobile (atendidos/atender/visualizar todos) -->
+				<div class="col-sx-12 visible-xs visible-sm hidden-md hidden-lg ui-sortable">
+					<div class="row">
+						<div class="col-xs-4 col-sm-4 ui-sortable">
+							<div class="widget-consulti widget-stats bg-consulti">
+								<div class="stats-info text-center">
+									 <div class="title bg-consulti-darker">Atendidos</div>
+									<p>39</p>
+								</div>	
+							</div><!--end Atendidos-->
+						</div>
+						<div class="col-xs-4 col-sm-4 text-center ui-sortable">
+							<div class="widget-consulti widget-stats bg-consulti">
+								<div class="stats-info text-center">
+									<div class="title bg-consulti-darker">Atender</div>
+									<p>71</p>
+								</div>	
+							</div><!--end Atender-->
+						</div>
+						<div class="col-xs-4 col-sm-4 ui-sortable">
+							<div class="widget-consulti widget-stats bg-consulti">
+								<div class="stats-info text-center">
+									 <div id="bt-mob-all-consultas" class="title">
+									 	<a href="javascript:;" title="Visualizar Todas as Consultas"><i class="ion-arrow-expand fa-3x text-inverse"></i></a>
+									 </div>
+									 <div id="bt-mob-off-consultas" class="title">
+									 	<a href="javascript:;" title="Ocultar Todas as Consultas"><i class="ion-arrow-shrink fa-3x text-inverse"></i></a>
+									 </div>
+								</div>	
+							</div><!--end Atendidos-->
+						</div>		
+					</div>
+				</div>
+				<!-- end visão mobile -->	
+
+				<div class="col-md-10 col-sm-12 ui-sortable">
+					<div class="row">
+						<div id="ultimas-consultas">
+							<div class="col-md-3 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Luísa Dias Diogo</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Unimed Especial II</h4>
+										<h4>123456-091234/00</h4>
+										<h4>12:00:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-3 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Michelle Bachelet</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Bradesco Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>13:20:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-3 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Cristina Kirchner</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>GEAP Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:10:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-3 col-sm-4 hidden-sm ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+						</div><!--end ultimas-consultas-->
+					</div><!--end row-->
+				</div> <!--end consultas destaque-->
+
+				<div class="col-md-1 col-sm-6 hidden-xs hidden-sm ui-sortable">
+					<div class="widget-consulti widget-stats bg-consulti">
+						<div class="stats-info text-center">
+							 <div id="bt-all-consultas" class="title text-center"><a href="javascript:;" title="Visualizar Todas as Consultas"><i class="ion-arrow-expand fa-3x text-inverse"></i></div>
+
+							 <div id="bt-off-consultas" class="title"><a href="javascript:;" title="Ocultar Todas as Consultas"><i class="ion-arrow-shrink fa-3x text-inverse"></i></a></div>
+						</div>	
+					</div><!--end Atendidos-->
+				</div>
+
+			</div>	
+				
+				<div id="todas-consultas">
+					<div class="row p-l-10 p-r-10">	
+
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div>
+								<div class="row">
+									<div class="col-md-4 hidden-xs hidden-sm"></div>
+									<div class="col-md-3">
+										
+		                                <div class="input-group">
+			                                <input type="text" class="form-control" placeholder="Pesquisar Consulta">
+			                                <div class="input-group-btn">
+			                                    <button type="button" class="btn btn-default">
+													<i class="fa fa-search"></i>	
+			                                    </button>
+			                                </div>
+			                            </div>
+									</div>
+									<div class="col-md-4 hidden-xs hidden-sm"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="height-500" data-scrollbar="true">	
+					
+						<div class="row p-l-10 p-r-10">		
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Cristina Kirchner</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>GEAP Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:10:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+								
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Cristina Kirchner</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>GEAP Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:10:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Cristina Kirchner</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>GEAP Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:10:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Cristina Kirchner</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>GEAP Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:10:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Cristina Kirchner</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>GEAP Saúde</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:10:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+							<div class="col-md-2 col-sm-4 ui-sortable">
+								<div class="widget widget-stats bg-consulti info-paciente-consulta">
+									<!--<div class="stats-icon"><i class="fa fa-user"></i></div>-->
+									<div class="stats-info infos-paciente">
+										<h4>Gretchen Miranda</h4>
+										<h4>81 00000-0000</h4> 
+										<h4>Particular</h4>
+										<h4>123456-091234/00</h4>
+										<h4>15:40:00</h4>
+										<div class="stats-link">
+											<a href="#modal-atender-agora" data-toggle="modal">Atender Agora&nbsp;<i class="fa fa-arrow-circle-o-right"></i></a>
+										</div>
+									</div>		
+								</div><!--end info-paciente-consulta-->
+							</div>
+						</div><!-- end row -->
+
+					</div><!-- end scroll -->		
+				</div>
+				<!-- end Todas as Consultas -->
+
+				<!-- Modal-Atender-Agora -->
+				<div class="modal" id="modal-atender-agora">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header alert alert-warning m-b-0">
+								<h4 class="modal-title">Atender Agora</h4>
+							</div>
+							<div class="modal-body">
+								Tem certeza que deseja atender este paciente agora?
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Sim</a>
+								<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Não</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Modal-Atender-Agora -->
+
+
+			<!-- begin row -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+						
+					<div class="panel panel-inverse">
+					    <div class="panel-heading">
+					        <h4 class="panel-title">Paciente em Atendimento</h4>
+					    </div>
+					    <div class="panel-body">
+					    <!-- begin invoice -->
+							<div class="invoice">
+								
+									<div class="invoice-company">
+						                <ul class="nav nav-pills">
+						                   
+						                    <li class="active">
+							                    <a href="#paciente" class="btn btn-default" title="Atender Paciente" data-toggle="tab">
+							                    	<i class="fa fa-2x fa-user"></i><span class="hidden-xs hidden-sm hidden-md"><br>Atender Paciente</span>
+							                    </a>
+						                    </li>
+
+						                    <li>
+							                    <a href="#atestado" class="btn btn-default" title="Gerar Atestado" data-toggle="tab">
+							                    	<i class="fa fa-2x fa-clipboard"></i><span class="hidden-xs hidden-sm hidden-md"><br>Gerar Atestado</span>
+							                    </a>
+						                    </li>
+						                  
+						                    <li>
+							                    <a href="#prescricao" class="btn btn-default" title="Prescrição Médica" data-toggle="tab">
+							                    	<i class="fa fa-2x fa-file-text"></i><span class="hidden-xs hidden-sm hidden-md"><br>Prescrição Médica</span>
+							                    </a>
+						                    </li>
+										
+											<li>
+							                    <a href="#modal-encerrar-consulta" class="btn btn-default" title="Encerrar Consulta" data-toggle="modal">
+							                    	<i class="fa fa-2x fa-check"></i><span class="hidden-xs hidden-sm hidden-md"><br>Encerrar Consulta</span>
+							                    </a>
+						                    </li>
+						                </ul>    
+					                </div>
+
+
+				                <!-- Modal-Encerrar-Consulta -->
+								<div class="modal" id="modal-encerrar-consulta">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header alert alert-warning m-b-0">
+												<h4 class="modal-title">Encerrar Consulta</h4>
+											</div>
+											<div class="modal-body">
+												Tem certeza que deseja encerrar esta consulta?
+											</div>
+											<div class="modal-footer">
+												<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Sim</a>
+												<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Não</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End Modal-Encerrar-Consulta -->
+								
+								<div class="tab-content p-0">
+
+								<div class="tab-pane fade active in" id="paciente">
+								<div class="invoice-header">
+				                	<div class="invoice-from">
+					                    <address class="m-t-5 m-b-5">
+					                        <p><strong>Dilma Rousseff</strong></p>
+					                        <p>Plano: <span class="label label-default">UNIMED ESPECIAL II</span></p>
+					                        <p>Número da Carteira: <span class="label label-default">123456-091234/00</span></p>
+					                        <p>Tipo da Consulta: <span class="label label-default">GINECOLOGIA</span></p>
+					                        <strong>Informações sobre o Paciente:</strong> <small>*Consulta Realizada em</small> <strong class="f-s-12">02/08/2014</strong>
+					                        <div class="m-b-10"></div>
+					                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates sit laboriosam molestias vel id, perferendis eveniet! Perferendis alias ratione aut voluptate, iure. Fugiat, saepe laborum sapiente expedita debitis quis praesentium.</p>
+					                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta veniam dolores praesentium quam neque aperiam molestiae pariatur hic natus, atque eaque tempora ipsa rerum iste autem cum, suscipit quisquam. Deserunt placeat voluptate molestias asperiores quos, rem deleniti minima odit quis.</p>	
+					                    </address>
+										<div class="form-group">
+					                    <textarea class="form-control no-rounded-corner" rows="10" placeholder="Inserir mais informações sobre o paciente."></textarea>
+					                    </div>
+				                		<div class="form-group">
+				                		<span class="pull-right hidden-print">
+						                	<a href="javascript:;" class="btn btn-default m-b-10">Inserir Informações</a>
+						            	</span>
+										</div>
+				                	</div>
+
+								</div><!-- end invoice header -->
+								</div><!-- end paciente -->
+								<div class="tab-pane fade" id="atestado">
+									<div class="panel-body panel-form brasao">
+				                        <form action="/" name="wysihtml5" method="POST">
+											<textarea class="atestado form-control height-lg brasao-med" id="wysihtml5" placeholder="Escreva aqui!" rows="32"></textarea>
+											
+											<!-- footer-atestado-medico -->
+											<div id="footer-medico" class="invoice-header">
+							                    <div class="invoice-from">
+							                        <address class="m-t-5 m-b-5">
+							                            <strong>Nome do Médico</strong><br />
+							                            CRM - 000000/0000<br />
+							                            Real Hospital Português<br />
+							                            Telefone: (81) 456-7890<br />
+							                            www.rhp.com.br
+							                        </address>
+							                    </div>
+							                    <div class="invoice-date">
+							                        <div class="date m-t-5">01 Dezembro de 2014</div>
+							                        <div class="invoice-detail">
+							                            ID#0000123DSS<br />
+							                            QRCODE
+							                        </div>
+							                    </div>
+						                	</div>
+						                	<!-- end footer-atestado-medico -->
+
+											<div class="form-group m-t-20">
+						                		<span class="pull-right hidden-print">
+								                	<a href="javascript:;" class="btn btn-default">Gerar Atestado Médico</a>
+								            	</span>
+											</div>
+										</form>
+				                    </div>
+								</div><!-- end atestado -->
+								<div class="tab-pane fade" id="prescricao">
+									<div class="panel-body panel-form brasao">
+				                        <form action="/" name="wysihtml5" method="POST">
+											<textarea class="prescricao form-control height-lg brasao-med" id="wysihtml5" placeholder="Escreva aqui!" rows="32"></textarea>
+
+											<!-- footer-atestado-medico -->
+											<div id="footer-medico" class="invoice-header">
+							                    <div class="invoice-from">
+							                        <address class="m-t-5 m-b-5">
+							                            <strong>Nome do Médico</strong><br />
+							                            CRM - 000000/0000<br />
+							                            Real Hospital Português<br />
+							                            Telefone: (81) 456-7890<br />
+							                            www.rhp.com.br
+							                        </address>
+							                    </div>
+							                    <div class="invoice-date">
+							                        <div class="date m-t-5">01 Dezembro de 2014</div>
+							                        <div class="invoice-detail">
+							                            ID#0000123DSS<br />
+							                            QRCODE
+							                        </div>
+							                    </div>
+						                	</div>
+						                	<!-- end footer-atestado-medico -->
+
+											<div class="form-group m-t-20">
+						                		<span class="pull-right hidden-print">
+								                	<a href="javascript:;" class="btn btn-default">Gerar Prescrição Médica</a>
+								            	</span>
+											</div>
+										</form>
+				                    </div>
+								</div><!-- end prescricao -->
+
+								</div><!-- end tab-content -->
+
+				                </div>
+								<!-- end invoice -->
+
+					    </div>
+					</div>
+
+				</div><!-- paciente em atendimento -->
+				
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					
+					<div class="panel panel-inverse">
+					    <div class="panel-heading">
+					        <h4 class="panel-title">Prontuário</h4>
+					    </div>
+					    <div class="panel-body">
+					     	
+							<div id="prontuario-ativo" class="panel panel-inverse">
+		                        <div class="panel-heading">
+		                        	<div class="row">
+										<div class="col-xs-12 col-sm-8 col-md-5">
+				                            <select id="tipoatendmento" class="form-control" name="">
+				                            	<option value="1">Nome do Tipo do Atendimento</option>
+				                            	<option value="2">Nome Atendimento 2</option>
+				                            	<option value="3">Nome Atendimento 3</option>
+				                            </select>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2">
+			                            	<h4 class="panel-title">06/01/2015</h4> <!-- data-consulta -->
+			                            </div>
+		                            </div>
+		                        </div>
+		                        <div class="panel-body">
+		                            <textarea class="form-control" placeholder="Textarea" rows="9"></textarea>
+		                            <div class="btn-group pull-right m-t-20">
+		                               <a href="#modal-encerrar-prontuario" class="btn btn-md btn-default" data-toggle="modal">Salvar Prontuário</a>
+		                            </div>
+		                        </div>
+		                    </div> <!-- Prontuário ativo -->
+
+							
+							<!-- Modal-Salvar-Prontuario -->
+							<div class="modal" id="modal-encerrar-prontuario">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header alert alert-success m-b-0">
+											<h4 class="modal-title">Salvar Prontuário</h4>
+										</div>
+										<div class="modal-body">
+											Prontuário salvo com sucesso.
+										</div>
+										<div class="modal-footer">
+											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">OK</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End modal-Salvar-Prontuario -->
+
+
+							<div class="panel-group" id="accordion">
+								
+								<div class="panel panel-inverse overflow-hidden">
+									<div class="panel-heading">
+										<h3 class="panel-title">
+											<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+											    <i class="fa fa-plus-circle pull-right"></i> 
+												<span class="m-r-10">Nome do Tipo do Atendimento</span>
+												<span class="">06/01/2015</span>
+											</a>
+										</h3>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse">
+										<div class="panel-body">
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-inverse overflow-hidden">
+									<div class="panel-heading">
+										<h3 class="panel-title">
+											<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+											    <i class="fa fa-plus-circle pull-right"></i> 
+												<span class="m-r-10">Nome do Tipo do Atendimento</span>
+												<span class="">06/01/2015</span>
+											</a>
+										</h3>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse">
+										<div class="panel-body">
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										</div>
+									</div>
+								</div>
+
+							</div> <!-- End Accordions -->
+
+            			</div>                
+					</div>
+
+				</div><!-- End Prontuarios -->
+				
+			</div>
+        </div>
+		<!-- end #content -->
+		
+       
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+	<script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="assets/crossbrowserjs/respond.min.js"></script>
+		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	
+	<script src="assets/plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script src="assets/plugins/masked-input/masked-input.min.js"></script>
+	<script src="assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+	<script src="assets/plugins/password-indicator/js/password-indicator.js"></script>
+	<script src="assets/plugins/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+	<script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+	<script src="assets/js/form-plugins.demo.min.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	<script src="assets/js/form-wysiwyg.demo.min.js"></script>
+	
+	<script src="assets/js/apps.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	<script>
+		$(document).ready(function() {
+			App.init();
+			FormPlugins.init();
+			FormWysihtml5.init();
+
+			$('.prescricao').wysihtml5();
+
+			$('#todas-consultas, #bt-off-consultas, #bt-mob-off-consultas').hide();
+	       
+
+	         $('#bt-all-consultas, #bt-mob-all-consultas').click(function(){
+	         	$('#bt-all-consultas, #bt-mob-all-consultas').hide();
+	         	$('#bt-off-consultas, #bt-mob-off-consultas').show();
+	         	$('#todas-consultas').toggle('show');
+	         	 //$('#todas-consultas').toggle('fade');
+	         });	
+
+	         $('#bt-off-consultas, #bt-mob-off-consultas').click(function(){
+	         	$('#bt-all-consultas, #bt-mob-all-consultas').show();
+	         	$('#bt-off-consultas, #bt-mob-off-consultas').hide();
+	         	$('#todas-consultas').toggle('fade');
+	         	 //$('#todas-consultas').toggle('fade');
+	         });	
+
+		});
+	</script>
+</body>
+</html>
+
